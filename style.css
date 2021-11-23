@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 120%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lucida Console", "Courier New", monospace;
+  height: 100vh;
+  background-color: #87cefa; /*#B0E0E6*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* layout of the box */
+main {
+  position: relative;
+  width: 70%;
+  height: 75%;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 60px;
+  overflow: auto;
+  display: flex;
+}
+
+div {
+  padding-bottom: 5px;
+}
+
+li {
+  padding: 5px;
+  display: inline-block;
+  font-size: 90%;
+}
+
+/* elements */
+.headers {
+  flex: 50%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* making dynamic dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  left: 0;
+  top: 100%;
+  background-color: white;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+  opacity: 0.5;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 10px;
+}
