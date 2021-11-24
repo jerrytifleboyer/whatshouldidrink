@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -30,7 +30,12 @@ img {
   object-fit: cover;
 }
 
-/* layout of the box itself*/
+p {
+  width: 10%;
+  padding: 1%;
+}
+
+/* layout of box*/
 main {
   position: relative;
   width: 70%;
@@ -42,7 +47,7 @@ main {
   display: flex;
 }
 
-/* elements */
+/* ELEMENTS */
 .headers {
   flex: 50%;
   padding: 3rem;
