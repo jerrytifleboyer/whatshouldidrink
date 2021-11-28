@@ -41,17 +41,18 @@ for (let i = 0; i < ingredients.length; i++) {
       //check if the item selected is in the list of cocktails, return the cocktail
       for (const cocktail in cocktails) {
         if (cocktails[cocktail].includes(ingredientClicked)) {
+          const strippedCocktailNameSpace = cocktail.replace(/\s+/g, "");
           //target cocktail class
           const div = document.querySelector(".cocktails");
 
           //create a list element in html
           const li = document.createElement("li");
 
-          //store name of cocktail
+          //give it the html name
           li.textContent = cocktail;
 
-          //give the content a class
-          li.className = cocktail;
+          //give the list a class
+          li.className = strippedCocktailNameSpace;
 
           //appends the text to the list
           div.appendChild(li).style.display = "block";
@@ -61,6 +62,14 @@ for (let i = 0; i < ingredients.length; i++) {
     //unhighlight the selected item
     else {
       ingredient.style.backgroundColor = "";
+      for (const cocktail in cocktails) {
+        if (cocktails[cocktail].includes(ingredientClicked)) {
+          const strippedCocktailNameSpace = cocktail.replace(/\s+/g, "");
+          const div = document.querySelector(".cocktails");
+          const li = document.querySelector(`.${strippedCocktailNameSpace}`);
+          div.removeChild(li);
+        }
+      }
     }
   });
 }
