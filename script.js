@@ -22,6 +22,9 @@ for (let i = 0; i < ingredients.length; i++) {
       for (const cocktail in cocktails) {
         if (cocktails[cocktail].includes(ingredientClicked)) {
           const strippedCocktailNameSpace = cocktail.replace(/\s+/g, "");
+
+          //TODO: check if the cocktail is already present on the list, if is dont add it
+
           //target cocktail class
           const div = document.querySelector(".cocktails");
 
@@ -42,6 +45,7 @@ for (let i = 0; i < ingredients.length; i++) {
     //unhighlight the selected item
     else {
       ingredient.style.backgroundColor = "";
+      //remove cocktails when unselecting the ingredient
       for (const cocktail in cocktails) {
         if (cocktails[cocktail].includes(ingredientClicked)) {
           const strippedCocktailNameSpace = cocktail.replace(/\s+/g, "");

@@ -24,7 +24,6 @@ const cocktails = {
     "sour mix",
     ".5/2",
   ],
-
   "gin and tonic": ["gin", "lime", "tonic", "cucumber", "2/.5/4"],
   "tom collins": ["gin", "lemon", "simple syrup", "soda", "2/1/.5"],
   gimlet: ["gin", "lime", "simple syrup", "2/.5/.5"],
@@ -36,7 +35,6 @@ const cocktails = {
   negroni: ["gin", "aperol", "vermouth", "1/all"],
   martini: ["gin", "vermouth", "2/1"],
   "corpse reviver 2": ["gin", "lillet", "lemon", "vermouth", ".75/all"],
-
   margaritas: ["tequila", "cointreau", "lime", "2/1/1"],
   "mexican coke": ["tequila", "lime", "coke", "2/.5/6"],
   "tequila mule": ["tequila", "lime", "ginger beer", "2/.5/6"],
@@ -47,7 +45,6 @@ const cocktails = {
     "bitters",
     "1.5/.5/.25",
   ],
-
   daiquiri: ["rum", "lime", "simple syrup", "2/1/.75"],
   mojito: ["rum", "lime", "simple syrup", "mint", "soda", "2/.75/.5"],
   "dark and stormy": ["rum", "lime", "ginger beer", "2/.5/6"],
@@ -60,7 +57,6 @@ const cocktails = {
     "mint",
     "1.5/1/.75/2",
   ],
-
   "old fashioned": [
     "bourbon",
     "simple syrup",
@@ -78,7 +74,6 @@ const cocktails = {
   "mint julep": ["bourbon", "simple syrup", "mint", "ice", "2/.25"],
   manhattan: ["bourbon, vermouth", "bitters", "2/1"],
   boulevardier: ["bourbon", "aperol", "vermouth", "1.25/1/1"],
-
   penicillin: [
     "scotch",
     "lemon",
@@ -93,7 +88,6 @@ const cocktails = {
     "orange",
     ".75/all",
   ],
-
   "whiskey sour": [
     "whiskey",
     "lemon",
