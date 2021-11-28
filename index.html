@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿What Should I Drink?</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script rel="javascript" src="script.js" async></script> -->
-    <script rel="javascript" src="test.js" async></script>
+    <script rel="javascript" src="script.js" async></script>
+    <!-- <script rel="javascript" src="test.js" async></script> -->
 </head>
 
 <body>
@@ -16,80 +16,80 @@
         <!-- left side container  -->
         <section class="container">
             <div class="header">Cocktails</div>
-        </section>
-        <!-- left side end -->
+            <div class="cocktails-container">
+                <div class="cocktails"></div>
+                <!-- REQUIRES JSX TO INVOKE BELOW, CONVERT PROJECT TO REACT -->
+                <!-- <div class="text">No ingredients selected...</div> -->
+            </div>
 
-        <!-- middle  -->
-        <p class="title">what's in my pantry?</p>
-        <!-- middle end -->
+        </section>
+        <!-- left side container end -->
+
+        <!-- center  -->
+        <div class="center">what's in your pantry?
+            <div class="divider"></div>
+        </div>
+        <!-- center end -->
 
         <!-- right side container -->
         <section class="container">
             <div class="header">Ingredients</div>
             <div class="ingredients-container">
-                <button class="dropdown-itself">Spirits</button>
-                <div class="dropdown-menu">
-                    <ul>
-                        <div class="ingredients">
-                            <li class="ingredient vodka"><img src="martini.PNG">vodka</li>
-                            <li class="ingredient gin"><img src="martini.PNG">gin</li>
-                            <li class="ingredient tequila"><img src="martini.PNG">tequila</li>
-                            <li class="ingredient rum"><img src="martini.PNG">rum</li>
-                            <li class="ingredient whiskey"><img src="martini.PNG">whiskey</li>
-                            <li class="ingredient bourbon"><img src="martini.PNG">bourbon</li>
-                            <li class="ingredient scotch"><img src="martini.PNG">scotch</li>
-                            <li class="ingredient rye"><img src="martini.PNG">rye</li>
-                            <li class="ingredient cognac"><img src="martini.PNG">cognac</li>
-                        </div>
-                    </ul>
+                <div class="category">Spirits</div>
+                <div class="menu-container">
+                    <div class="ingredients">
+                        <li class="ingredient vodka"><img src="martini.PNG">vodka</li>
+                        <li class="ingredient gin"><img src="martini.PNG">gin</li>
+                        <li class="ingredient tequila"><img src="martini.PNG">tequila</li>
+                        <li class="ingredient rum"><img src="martini.PNG">rum</li>
+                        <li class="ingredient whiskey"><img src="martini.PNG">whiskey</li>
+                        <li class="ingredient bourbon"><img src="martini.PNG">bourbon</li>
+                        <li class="ingredient scotch"><img src="martini.PNG">scotch</li>
+                        <li class="ingredient rye"><img src="martini.PNG">rye</li>
+                        <li class="ingredient cognac"><img src="martini.PNG">cognac</li>
+                    </div>
                 </div>
             </div>
             <div class="ingredients-container">
-                <button class="dropdown-itself">Citrus/Perishables</button>
-                <div class="dropdown-menu">
-                    <ul>
-                        <div class="ingredients">
-                            <li class="ingredient lemon"><img src="martini.PNG">lemon</li>
-                            <li class="ingredient lime"><img src="martini.PNG">lime</li>
-                            <li class="ingredient orange"><img src="martini.PNG">orange</li>
-                            <li class="ingredient cucumber"><img src="martini.PNG">cucumber</li>
-                            <li class="ingredient mint"><img src="martini.PNG">mint</li>
-                            <li class="ingredient cranberry"><img src="martini.PNG">cranberry</li>
-                        </div>
-                    </ul>
+                <div class="category">Citrus/Perishables</div>
+                <div class="menu-container">
+                    <div class="ingredients">
+                        <li class="ingredient lemon"><img src="martini.PNG">lemon</li>
+                        <li class="ingredient lime"><img src="martini.PNG">lime</li>
+                        <li class="ingredient orange"><img src="martini.PNG">orange</li>
+                        <li class="ingredient cucumber"><img src="martini.PNG">cucumber</li>
+                        <li class="ingredient mint"><img src="martini.PNG">mint</li>
+                        <li class="ingredient cranberry"><img src="martini.PNG">cranberry</li>
+                    </div>
                 </div>
             </div>
             <div class="ingredients-container">
-                <button class="dropdown-itself">Sweets</button>
-                <div class="dropdown-menu">
-                    <ul>
-                        <div class="ingredients">
-                            <li class="ingredient simplesyrup"><img src="martini.PNG">simple syrup</li>
-                            <li class="ingredient coke"><img src="martini.PNG">coke</li>
-                            <li class="ingredient gingerbeer"><img src="martini.PNG">ginger beer</li>
-                            <li class="ingredient tonic"><img src="martini.PNG">tonic</li>
-                            <li class="ingredient cointreau"><img src="martini.PNG">cointreau</li>
-                            <li class="ingredient sourmix"><img src="martini.PNG">sour mix</li>
-                            <li class="ingredient cremedemure"><img src="martini.PNG">creme de mure</li>
-                        </div>
-                    </ul>
+                <div class="category">Sweets</div>
+                <div class="menu-container">
+                    <div class="ingredients">
+                        <li class="ingredient simplesyrup"><img src="martini.PNG">simple syrup</li>
+                        <li class="ingredient coke"><img src="martini.PNG">coke</li>
+                        <li class="ingredient gingerbeer"><img src="martini.PNG">ginger beer</li>
+                        <li class="ingredient tonic"><img src="martini.PNG">tonic</li>
+                        <li class="ingredient cointreau"><img src="martini.PNG">cointreau</li>
+                        <li class="ingredient sourmix"><img src="martini.PNG">sour mix</li>
+                        <li class="ingredient cremedemure"><img src="martini.PNG">creme de mure</li>
+                    </div>
                 </div>
-                <button class="dropdown-itself">Other</button>
-                <div class="dropdown-menu">
-                    <ul>
-                        <div class="ingredients">
-                            <li class="ingredient champagne"><img src="martini.PNG">champagne</li>
-                            <li class="ingredient clubsoda"><img src="martini.PNG">club soda</li>
-                            <li class="ingredient aperol"><img src="martini.PNG">aperol</li>
-                            <li class="ingredient vermouth"><img src="martini.PNG">vermouth</li>
-                            <li class="ingredient bitters"><img src="martini.PNG">bitters</li>
-                            <li class="ingredient eggwhite"><img src="martini.PNG">egg white</li>
-                        </div>
-                    </ul>
+                <div class="category">Other</div>
+                <div class="menu-container">
+                    <div class="ingredients">
+                        <li class="ingredient champagne"><img src="martini.PNG">champagne</li>
+                        <li class="ingredient clubsoda"><img src="martini.PNG">club soda</li>
+                        <li class="ingredient aperol"><img src="martini.PNG">aperol</li>
+                        <li class="ingredient vermouth"><img src="martini.PNG">vermouth</li>
+                        <li class="ingredient bitters"><img src="martini.PNG">bitters</li>
+                        <li class="ingredient eggwhite"><img src="martini.PNG">egg white</li>
+                    </div>
                 </div>
             </div>
         </section>
-        <!-- right side end  -->
+        <!-- right side container end  -->
     </main>
 </body>
 
