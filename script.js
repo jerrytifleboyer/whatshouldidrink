@@ -17,16 +17,7 @@ for (let i = 0; i < ingredientSelected.length; i++) {
     if (ingredientClass.style.backgroundColor == "") {
       ingredientClass.style.backgroundColor = "green";
 
-      // //clear cocktail container
-      // if (cocktailContainer.hasChildNodes) {
-      //   console.log("has child nodes");
-      //   while (cocktailContainer.hasChildNodes) {
-      //     console.log(counter++);
-      //     cocktailContainer.removeChild(cocktailContainer.childNodes[0]);
-      //   }
-      // }
       //display the cocktails that contain selected ingredients
-
       const ingredient = ingredientSelected[i].textContent;
       ingredientList.push(ingredient);
       showCocktail();
@@ -56,6 +47,10 @@ function showCocktail() {
         //appends the text to the list
         cocktailContainer.appendChild(li).style.display = "block";
       }
+    }
+  } else {
+    while (cocktailContainer.hasChildNodes) {
+      cocktailContainer.removeChild(cocktailContainer.childNodes[0]);
     }
   }
 }
