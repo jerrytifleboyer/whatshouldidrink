@@ -1,6 +1,6 @@
 "use strict";
 
-const cocktails = {
+const cocktailList = {
   "moscow mule": ["vodka", "ginger beer", "lime", "2/.5/6"],
   cosmopolitan: ["vodka", "cranberry", "lime", "cointreau", "1.5/1/.5/.5"],
   "vodka cranberry": ["vodka", "cranberry", "2/6"],

@@ -1,59 +1,61 @@
 "use strict";
 //this is sorta dumb but the html is reading from the cocktails.js file
-//dictionary is in cocktail.js
 
-const ingredients = document.querySelectorAll(".ingredient");
+const ingredientSelected = document.querySelectorAll(".ingredient");
+const cocktailContainer = document.querySelector(".cocktails-container");
+let ingredientList = [];
+let counter = 0;
 
-for (let i = 0; i < ingredients.length; i++) {
-  //strip the spaces of the ingredient clicked
-  const ingredient = document.querySelector(
-    `.${ingredients[i].textContent.replace(/\s+/g, "")}`
+for (let i = 0; i < ingredientSelected.length; i++) {
+  //regex get classname of element by textContent
+  const ingredientClass = document.querySelector(
+    `.${ingredientSelected[i].textContent.replace(/\s+/g, "")}`
   );
-  //save the stripped value as a variable to compare later
-  const ingredientClicked = ingredients[i].textContent;
+  //each ingredient when clicked
+  ingredientSelected[i].addEventListener("click", function () {
+    //ingredient is green when selected
+    if (ingredientClass.style.backgroundColor == "") {
+      ingredientClass.style.backgroundColor = "green";
 
-  //class listens clicks
-  ingredients[i].addEventListener("click", function () {
-    //highlight the selected item
-    if (ingredient.style.backgroundColor == "") {
-      ingredient.style.backgroundColor = "green";
+      // //clear cocktail container
+      // if (cocktailContainer.hasChildNodes) {
+      //   console.log("has child nodes");
+      //   while (cocktailContainer.hasChildNodes) {
+      //     console.log(counter++);
+      //     cocktailContainer.removeChild(cocktailContainer.childNodes[0]);
+      //   }
+      // }
+      //display the cocktails that contain selected ingredients
 
-      //check if the item selected is in the list of cocktails, return the cocktail
-      for (const cocktail in cocktails) {
-        if (cocktails[cocktail].includes(ingredientClicked)) {
-          const strippedCocktailNameSpace = cocktail.replace(/\s+/g, "");
-
-          //TODO: check if the cocktail is already present on the list, if is dont add it
-
-          //target cocktail class
-          const div = document.querySelector(".cocktails");
-
-          //create a list element in html
-          const li = document.createElement("li");
-
-          //give it the html name
-          li.textContent = cocktail;
-
-          //give the list a class
-          li.className = strippedCocktailNameSpace;
-
-          //appends the text to the list
-          div.appendChild(li).style.display = "block";
-        }
-      }
-    }
-    //unhighlight the selected item
-    else {
-      ingredient.style.backgroundColor = "";
-      //remove cocktails when unselecting the ingredient
-      for (const cocktail in cocktails) {
-        if (cocktails[cocktail].includes(ingredientClicked)) {
-          const strippedCocktailNameSpace = cocktail.replace(/\s+/g, "");
-          const div = document.querySelector(".cocktails");
-          const li = document.querySelector(`.${strippedCocktailNameSpace}`);
-          div.removeChild(li);
-        }
-      }
+      const ingredient = ingredientSelected[i].textContent;
+      ingredientList.push(ingredient);
+      showCocktail();
+    } else {
+      //unhighlight the selected item
+      ingredientClass.style.backgroundColor = "";
+      ingredientList.pop();
+      showCocktail();
     }
   });
+}
+
+//this function compares the list of clicked items to the list of
+//ingredients that make up that respective cocktail
+function showCocktail() {
+  if (ingredientList.length > 0) {
+    for (const cocktail in cocktailList) {
+      //TODO make sure the list isnt empty
+      if (ingredientList.every((e) => cocktailList[cocktail].includes(e))) {
+        const mixedDrink = cocktail.replace(/\s+/g, "");
+        //create a list element in html
+        const li = document.createElement("li");
+        //give it the html name
+        li.textContent = cocktail;
+        //give the list object a classname
+        li.className = mixedDrink;
+        //appends the text to the list
+        cocktailContainer.appendChild(li).style.display = "block";
+      }
+    }
+  }
 }
