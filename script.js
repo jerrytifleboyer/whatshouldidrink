@@ -4,27 +4,30 @@
 const ingredientSelected = document.querySelectorAll(".ingredient");
 const cocktailContainer = document.querySelector(".cocktails-container");
 let ingredientList = [];
-let counter = 0;
 
 for (let i = 0; i < ingredientSelected.length; i++) {
-  //regex get classname of element by textContent
+  //classname of ingredient
   const ingredientClass = document.querySelector(
     `.${ingredientSelected[i].textContent.replace(/\s+/g, "")}`
   );
-  //each ingredient when clicked
-  ingredientSelected[i].addEventListener("click", function () {
-    //ingredient is green when selected
-    if (ingredientClass.style.backgroundColor == "") {
-      ingredientClass.style.backgroundColor = "green";
+  //html of ingredient
+  const ingredient = ingredientSelected[i].textContent;
 
-      //display the cocktails that contain selected ingredients
-      const ingredient = ingredientSelected[i].textContent;
+  ingredientSelected[i].addEventListener("click", function () {
+    //highlight selected
+    if (ingredientClass.style.backgroundColor == "") {
+      ingredientClass.style.backgroundColor = "#F5B041";
+
+      //display cocktails
       ingredientList.push(ingredient);
       showCocktail();
     } else {
       //unhighlight the selected item
       ingredientClass.style.backgroundColor = "";
-      ingredientList.pop();
+
+      //remove the cocktail from the list
+      const removeIngredient = ingredientList.indexOf(ingredient);
+      ingredientList.splice(removeIngredient, 1);
       showCocktail();
     }
   });
@@ -34,8 +37,9 @@ for (let i = 0; i < ingredientSelected.length; i++) {
 //ingredients that make up that respective cocktail
 function showCocktail() {
   if (ingredientList.length > 0) {
+    console.log(ingredientList);
+    clearDisplay();
     for (const cocktail in cocktailList) {
-      //TODO make sure the list isnt empty
       if (ingredientList.every((e) => cocktailList[cocktail].includes(e))) {
         const mixedDrink = cocktail.replace(/\s+/g, "");
         //create a list element in html
@@ -49,8 +53,13 @@ function showCocktail() {
       }
     }
   } else {
-    while (cocktailContainer.hasChildNodes) {
-      cocktailContainer.removeChild(cocktailContainer.childNodes[0]);
-    }
+    clearDisplay();
+  }
+}
+
+//clear the cocktails screen
+function clearDisplay() {
+  while (cocktailContainer.hasChildNodes()) {
+    cocktailContainer.removeChild(cocktailContainer.childNodes[0]);
   }
 }
