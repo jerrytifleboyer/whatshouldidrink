@@ -80,7 +80,7 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 2px solid green;
+  border: 3px solid #a569bd;
   border-radius: 10px;
   background-color: white;
   padding: 2px;
@@ -93,7 +93,7 @@ main {
 }
 
 .ingredient:hover {
-  background-color: orange;
+  background-color: #5dade2;
   cursor: pointer;
 }
 
